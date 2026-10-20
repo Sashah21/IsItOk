@@ -32,8 +32,7 @@ class ParserFactory:
         "python" : PythonDependencyParser
     }
 
-    @staticmethod
-    def crearParser(api : str) -> DependencyParser:
+    def crearParser(self, api : str) -> DependencyParser:
         result: DependencyParser = ParserFactory.parser.get(api.lower())
         if not result:
             raise ValueError(f'{result} no es soportado.')
